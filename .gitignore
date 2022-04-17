@@ -7,6 +7,7 @@
 
 # checkpoint
 checkpoints/
+3mmCheckpoints/
 
 # For PyCharm users
 .idea/
