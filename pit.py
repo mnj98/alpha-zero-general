@@ -5,7 +5,7 @@ from MCTS import MCTS
 #from othello.pytorch.NNet import NNetWrapper as NNet
 from three_mm.three_mmGame import three_mmGame
 from three_mm.three_mmPlayers import *
-from three_mm.keras.NNet import NNetWrapper as NNet
+from three_mm.tf2keras.NNet import NNetWrapper as NNet
 
 
 import numpy as np
