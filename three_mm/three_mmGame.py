@@ -103,7 +103,6 @@ class three_mmGame(Game):
         columns = np.sum(board.board, axis=0)
         diag1 = np.trace(board.board)
         diag2 = np.trace(np.rot90(board.board))
-        print(rows, columns, diag1, diag2)
 
         if 6 in rows or 6 in columns or diag1 == 6 or diag2 == 6:
             return 1
