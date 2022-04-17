@@ -14,12 +14,9 @@ import argparse
 from .three_mmNNet import Three_mmNNet as onnet
 
 """
-NeuralNet wrapper class for the TicTacToeNNet.
+NeuralNet wrapper class for the three_mmNNet.
 
-Author: Evgeny Tyurin, github.com/evg-tyurin
-Date: Jan 5, 2018.
-
-Based on (copy-pasted from) the NNet by SourKream and Surag Nair.
+Based on the tictactoe NNet.py
 """
 
 args = dotdict({

@@ -3,23 +3,15 @@ sys.path.append('..')
 from utils import *
 
 import argparse
-#from keras.models import *
-#from keras.layers import *
-#from keras.optimizers import *
-
-import tensorflow as tf
 
 from tensorflow.keras.models import *
 from tensorflow.keras.layers import *
 from tensorflow.keras.optimizers import *
 
 """
-NeuralNet for the game of TicTacToe.
+NeuralNet for the game of Three man's morris.
 
-Author: Evgeny Tyurin, github.com/evg-tyurin
-Date: Jan 5, 2018.
-
-Based on the OthelloNNet by SourKream and Surag Nair.
+Based on the tictactoe CNN
 """
 class Three_mmNNet():
     def __init__(self, game, args):
@@ -27,40 +19,6 @@ class Three_mmNNet():
         self.board_x, self.board_y = game.getBoardSize()
         self.action_size = game.getActionSize()
         self.args = args
-
-        """
-        self.model = models.Sequential()
-        self.model.add(layers.Conv2D(args.num_channels, (3, 3), input_shape=(self.board_x, self.board_y)))
-        self.model.add(layers.BatchNormalization(axis=3))
-        self.model.add(layers.Activation('relu'))
-
-        self.model.add(layers.Conv2D(args.num_channels, (3, 3), input_shape=(self.board_x, self.board_y)))
-        self.model.add(layers.BatchNormalization(axis=3))
-        self.model.add(layers.Activation('relu'))
-
-        self.model.add(layers.Conv2D(args.num_channels, (3, 3), input_shape=(self.board_x, self.board_y)))
-        self.model.add(layers.BatchNormalization(axis=3))
-        self.model.add(layers.Activation('relu'))
-
-        self.model.add(layers.Conv2D(args.num_channels, (3, 3), input_shape=(self.board_x, self.board_y)))
-        self.model.add(layers.BatchNormalization(axis=3))
-        self.model.add(layers.Activation('relu'))
-
-        self.model.add(layers.Flatten())
-
-        self.model.add(layers.Dense(1024))
-        self.model.add(layers.BatchNormalization(axis=1))
-        self.model.add(layers.Activation('relu'))
-        self.model.add(layers.Dropout(args.dropout))
-
-        self.model.add(layers.Dense(512))
-        self.model.add(layers.BatchNormalization(axis=1))
-        self.model.add(layers.Activation('relu'))
-        self.model.add(layers.Dropout(args.dropout))
-
-        """
-
-
 
         # Neural Net
         
