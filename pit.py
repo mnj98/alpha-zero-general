@@ -1,8 +1,11 @@
 import Arena
 from MCTS import MCTS
-from othello.OthelloGame import OthelloGame
-from othello.OthelloPlayers import *
-from othello.pytorch.NNet import NNetWrapper as NNet
+#from othello.OthelloGame import OthelloGame
+#from othello.OthelloPlayers import *
+#from othello.pytorch.NNet import NNetWrapper as NNet
+from three_mm.three_mmGame import three_mmGame
+from three_mm.three_mmPlayers import *
+from three_mm.keras.NNet import NNetWrapper as NNet
 
 
 import numpy as np
@@ -16,18 +19,22 @@ any agent.
 mini_othello = False  # Play in 6x6 instead of the normal 8x8.
 human_vs_cpu = True
 
+
+'''
 if mini_othello:
     g = OthelloGame(6)
 else:
     g = OthelloGame(8)
+'''
 
+g = three_mmGame()
 # all players
 rp = RandomPlayer(g).play
-gp = GreedyOthelloPlayer(g).play
-hp = HumanOthelloPlayer(g).play
+#gp = GreedyOthelloPlayer(g).play
+hp = HumanThree_mmPlayer(g).play
 
 
-
+'''
 # nnet players
 n1 = NNet(g)
 if mini_othello:
@@ -48,7 +55,7 @@ else:
     n2p = lambda x: np.argmax(mcts2.getActionProb(x, temp=0))
 
     player2 = n2p  # Player 2 is neural network if it's cpu vs cpu.
-
-arena = Arena.Arena(n1p, player2, g, display=OthelloGame.display)
-
+'''
+#arena = Arena.Arena(n1p, player2, g, display=OthelloGame.display)
+arena = Arena.Arena(hp, rp, g, display=three_mmGame.display)
 print(arena.playGames(2, verbose=True))
